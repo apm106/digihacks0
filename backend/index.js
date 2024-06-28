@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors'); 
 const { OpenAI } = require('openai');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3001;
@@ -12,6 +13,7 @@ const openai = new OpenAI({
 });
 
 app.use(cors()); 
+app.use(bodyParser.json());
 
 const getArticleReview = async (articleText) => {
   try {
@@ -35,11 +37,12 @@ const getArticleReview = async (articleText) => {
 
 app.post('/article-review', async (req, res) => {
   try {
+    console.log(req.body)
     const { articleText } = req.body;
     const response = await getArticleReview(articleText);
     res.json({ response });
   } catch (error) {
-    console.error('Error:', error);
+    console.error('CHATGPT Error:', error);
     res.status(500).json({ error: 'An error occurred while processing your request.' });
   }
 });

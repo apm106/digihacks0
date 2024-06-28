@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import BoxBasic from './components/BoxBasic';
 import Input from './components/Input';
@@ -6,26 +6,36 @@ import SubmitButton from './components/SubmitButton';
 
 function App() {
   const [message, setMessage] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
-  const fetchMessage = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/api/message');
-      setMessage(response.data.message);
-    } catch (error) {
-      console.error('Error fetching the message:', error);
-    }
+  const handleInputChange = (event) => {
+    console.log("in handInputChange")
+    setInputValue(event.target.value);
   };
 
-  useEffect(() => {
-    fetchMessage();
-  }, []);
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post('http://localhost:3001/article-review', { articleText: inputValue }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      setMessage(response.data.response);
+    } catch (error) {
+      console.error('Error sending the article review:', error.message);
+      if (error.response) {
+        console.error('Server responded with status code', error.response.status);
+        console.error('Response data:', error.response.data);
+      }
+    }    
+  };
 
   return (
     <BoxBasic>
-        <h1>Trust-o-meter!</h1>
-        <p>Response from backend: {message}</p>
-        <Input />
-        <SubmitButton />
+      <h1>Trust-o-meter!</h1>      
+      <Input value={inputValue} onChange={handleInputChange} />
+      <SubmitButton onClick={handleSubmit} />
+      <p>Response from backend: {message}</p>
     </BoxBasic>
   );
 }
