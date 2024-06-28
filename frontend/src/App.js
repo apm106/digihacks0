@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import BoxBasic from './components/BoxBasic';
+import Input from './components/Input';
+import SubmitButton from './components/SubmitButton';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -18,10 +21,12 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Hello!</h1>
-      <p>Response from backend: {message}</p>
-    </div>
+    <BoxBasic>
+        <h1>Trust-o-meter!</h1>
+        <p>Response from backend: {message}</p>
+        <Input />
+        <SubmitButton />
+    </BoxBasic>
   );
 }
 
