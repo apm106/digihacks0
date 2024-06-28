@@ -27,5 +27,6 @@ Sure, here's how you can prefix each line with `frontend/`:
 
 
 /backend/node_modules/
+/backend/.env
 ```
 This will ensure that the gitignore rules apply to the files and directories in the `frontend/` directory.
