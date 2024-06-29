@@ -17,7 +17,9 @@ function App() {
   };
 
   const handleSubmit = () => {
-    handleShowResults(); // Immediately switch to the results page
+    if (inputValue) {
+      handleShowResults(); // Immediately switch to the results page      
+    }
 
     // Send the server request in the background
     axios
