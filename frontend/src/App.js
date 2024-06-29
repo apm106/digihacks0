@@ -16,6 +16,7 @@ function App() {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [displayedPhrase, setDisplayedPhrase] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [blinkerVisible, setBlinkerVisible] = useState(true);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -45,7 +46,6 @@ function App() {
     }
   };
 
-  // Effect to change the header text with typing and cross-out animation
   useEffect(() => {
     const phraseToType = phrases[currentPhraseIndex];
     let timeout;
@@ -55,23 +55,30 @@ function App() {
         setDisplayedPhrase((prevPhrase) =>
           phraseToType.slice(0, prevPhrase.length + 1)
         );
-      }, 150); // Adjust typing speed here (milliseconds)
+      }, 150);
 
       if (displayedPhrase === phraseToType) {
         setIsTypingComplete(true);
 
-        // Cross-out animation after typing complete
-        setTimeout(() => {
-          setIsTypingComplete(false);
-          setCurrentPhraseIndex((prevIndex) =>
-            prevIndex === phrases.length - 1 ? 0 : prevIndex + 1
-          );
-          setDisplayedPhrase("");
-        }, 2000); // Time before next phrase (milliseconds)
-      }
-    }
+        const blinkerInterval = setInterval(() => {
+          setBlinkerVisible((prevVisible) => !prevVisible);
+        }, 500);
 
-    return () => clearTimeout(timeout);
+        setTimeout(() => {
+          clearInterval(blinkerInterval);
+          setBlinkerVisible(false);
+          setTimeout(() => {
+            setIsTypingComplete(false);
+            setCurrentPhraseIndex((prevIndex) =>
+              prevIndex === phrases.length - 1 ? 0 : prevIndex + 1
+            );
+            setDisplayedPhrase("");
+          }, 100);
+        }, 3000);
+      }
+
+      return () => clearTimeout(timeout);
+    }
   }, [currentPhraseIndex, displayedPhrase, isTypingComplete]);
 
   return (
@@ -80,9 +87,10 @@ function App() {
         <h1 className="typing-effect">
           {displayedPhrase}
           {isTypingComplete && <span className="cross-out"></span>}
+          <span className="blinker">{blinkerVisible ? "|" : ""}</span>
         </h1>
       </Box>
-      <Box className="misinformation">stop the spread of misinformation</Box>
+      <Box className="misinformation">STOP THE SPREAD OF MISINFORMATION</Box>
       <Box className="input-container">
         <Input
           value={inputValue}
