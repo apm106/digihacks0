@@ -1,16 +1,12 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Input from "./Input"; // Ensure the path to Input is correct
-import "../App.css"; // Import styles if needed
+import Input from "./Input";
+import "../App.css";
 
 function SearchBar({ inputValue, onInputChange, onSubmit }) {
   return (
     <Box className="input-container">
-      <Input
-        value={inputValue}
-        onChange={onInputChange}
-        onSubmit={onSubmit}
-      />
+      <Input value={inputValue} onChange={onInputChange} onSubmit={onSubmit} />
     </Box>
   );
 }

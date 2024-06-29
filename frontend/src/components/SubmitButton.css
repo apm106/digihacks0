@@ -2,11 +2,11 @@
 .microscope-img {
     width: 30px;
     height: 60px;
-    transition: transform 0.3s ease-in-out; /* Smooth transition for glow effect */
+    transition: transform 0.3s ease-in-out;
   }
   
   .microscope-img:hover {
-    filter: brightness(1.2); /* Increase brightness to make it appear as glowing */
-    transform: scale(1.1); /* Scale up slightly on hover */
+    filter: brightness(1.2);
+    transform: scale(1.1);
   }
   

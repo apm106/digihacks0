@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import LandingPage from "./pages/LandingPage";
 import ResultsPage from "./pages/ResultsPage";
-import axios from 'axios';
+import axios from "axios";
 
 function App() {
   const [showResults, setShowResults] = useState(false);
