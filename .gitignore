@@ -25,8 +25,9 @@ Sure, here's how you can prefix each line with `frontend/`:
 /frontend/yarn-debug.log*
 /frontend/yarn-error.log*
 
-
+node_modules/
 /backend/node_modules/
+/backend/node_modules/mime/
 /backend/.env
 ```
 This will ensure that the gitignore rules apply to the files and directories in the `frontend/` directory.
