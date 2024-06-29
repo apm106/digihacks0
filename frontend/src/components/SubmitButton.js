@@ -28,7 +28,6 @@ export default function SubmitButton({ onClick }) {
         src={microscopeImage}
         alt="Microscope"
         style={{
-          marginRight: "15px",
           width: "100%", // Make the image fit the button
           height: "100%", // Make the image fit the button
           transition: "transform 0.3s ease-in-out", // Smooth transition for glow effect
