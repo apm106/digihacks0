@@ -15,13 +15,13 @@ body {
     min-height: 100vh;
   }
   
-  .header {
+  .false-statements {
     text-align: left; /* Align text to the left */
     position: relative; /* Position relative for cursor animation */
     margin-bottom: 5px;
   }
   
-  .header h1 {
+  .false-statements h1 {
     font-size: 3rem;
     margin: 0;
     overflow: hidden; /* Hide overflow to clip cursor animation */
