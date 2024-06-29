@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import SubmitButton from "./SubmitButton";
@@ -15,28 +15,29 @@ export default function Input({ value, onChange, onSubmit }) {
         alignItems: "center",
         width: "100%",
         maxWidth: 600,
+        justifyContent: "flex-end", // Aligns items to the end (right side)
       }}
     >
       <TextField
-        sx={{ flex: "700%", mr: 1 }}
         fullWidth
         label="Paste your link or text"
         variant="outlined"
         value={value}
         onChange={onChange}
         InputLabelProps={{
-          sx: { color: "#ffffff" }, // Sets the label color to white
+          sx: { color: "#ffffff" },
         }}
         InputProps={{
           sx: {
-            color: "#ffffff", // Sets the input text color to white
+            color: "#ffffff",
             "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#ffffff", // Sets the outline color to white
+              borderColor: "#ffffff",
             },
+            paddingRight: 0, // Remove default padding to align button correctly
           },
+          endAdornment: <SubmitButton onClick={handleButtonClick} />,
         }}
       />
-      <SubmitButton onClick={handleButtonClick} sx={{ flex: "10%", ml: 1 }} />
     </Box>
   );
 }

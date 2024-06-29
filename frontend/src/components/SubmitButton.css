@@ -1,6 +1,6 @@
 
 .microscope-img {
-    width: 60px;
+    width: 30px;
     height: 60px;
     transition: transform 0.3s ease-in-out; /* Smooth transition for glow effect */
   }

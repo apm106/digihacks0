@@ -13,17 +13,16 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 20px;
   }
   
   .header {
     text-align: left; /* Align text to the left */
-    margin-bottom: 20px;
     position: relative; /* Position relative for cursor animation */
+    margin-bottom: 5px;
   }
   
   .header h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0;
     overflow: hidden; /* Hide overflow to clip cursor animation */
     white-space: nowrap; /* Prevent text from wrapping */
@@ -76,13 +75,47 @@ body {
   
   @keyframes cross-out {
     from {
-      width: 0; /* Start with no line */
+      width: 0;
     }
     to {
-      width: 100%; /* Full width line */
+      width: 100%;
     }
   }
+
+
+    .blinker {
+    opacity: 1; 
+  }
   
+  .blinker.hidden {
+    opacity: 0;
+  }
+  
+  .misinformation {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .typewriter-text {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .typewriter-text::after {
+    content: "|"; /* Blinker cursor */
+    display: inline-block;
+    width: 0; /* Start with no width */
+    animation: blink-caret 0.75s step-end infinite; /* Blink animation */
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent; /* Blinker color */
+    }
+    50% {
+      border-color: #ffffff; /* White blinker color */
+    }
+  }
   
   
   .input-container {
