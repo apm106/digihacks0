@@ -6,12 +6,12 @@ import SubmitButton from "./SubmitButton";
 
 export default function Input({ value, onChange, onSubmit }) {
   const handleButtonClick = () => {
-    onSubmit(); // Call onSubmit function passed as prop
+    onSubmit();
   };
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      onSubmit(); // Call onSubmit function passed as prop when Enter key is pressed
+      onSubmit();
     }
   };
 
@@ -22,16 +22,16 @@ export default function Input({ value, onChange, onSubmit }) {
         alignItems: "center",
         width: "100%",
         maxWidth: 600,
-        justifyContent: "flex-end", // Aligns items to the end (right side)
+        justifyContent: "flex-end",
       }}
     >
       <TextField
         fullWidth
-        placeholder="Paste your link or text" // Use placeholder instead of label
+        placeholder="Paste your link or text"
         variant="outlined"
         value={value}
         onChange={onChange}
-        onKeyPress={handleKeyPress} // Add onKeyPress event handler
+        onKeyPress={handleKeyPress}
         InputProps={{
           sx: {
             color: "black",
@@ -40,7 +40,7 @@ export default function Input({ value, onChange, onSubmit }) {
               borderRadius: "20px",
               borderWidth: "2px",
             },
-            paddingRight: "10px", // Add right padding to ensure text does not overlap button
+            paddingRight: "10px",
           },
           endAdornment: (
             <InputAdornment position="end">

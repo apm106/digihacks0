@@ -20,17 +20,17 @@ export default function SubmitButton({ onClick }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        width: "40px", // Adjust width to fit the image
-        height: "40px", // Adjust height to fit the image
+        width: "40px",
+        height: "40px",
       }}
     >
       <img
         src={microscopeImage}
         alt="Microscope"
         style={{
-          width: "100%", // Make the image fit the button
-          height: "100%", // Make the image fit the button
-          transition: "transform 0.3s ease-in-out", // Smooth transition for glow effect
+          width: "100%",
+          height: "100%",
+          transition: "transform 0.3s ease-in-out",
         }}
         className="microscope-img"
       />

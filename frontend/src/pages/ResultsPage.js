@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { ForceGraph2D } from "react-force-graph";
 import Box from "@mui/material/Box";
+import SearchBar from "../components/SearchBar";
+import logo from "../icons/Logo.png";
 import "../App.css";
 
 const generateRandomData = () => {
@@ -29,7 +31,6 @@ const createRadarGraphData = (labels, data) => {
     };
   });
 
-  // Add center node
   nodes.push({
     id: nodes.length,
     name: "Center",
@@ -43,10 +44,9 @@ const createRadarGraphData = (labels, data) => {
     target: (index + 1) % (nodes.length - 1),
   }));
 
-  // Add links from center to each outer node
   nodes.slice(0, -1).forEach((node, index) => {
     links.push({
-      source: nodes.length - 1, // center node
+      source: nodes.length - 1,
       target: index,
     });
   });
@@ -56,23 +56,44 @@ const createRadarGraphData = (labels, data) => {
 
 const labels = ["Accuracy", "Bias", "Recency", "Relevance"];
 const radarGraphData = createRadarGraphData(labels, dataPoints);
-import React from "react";
-import { Box } from "@mui/material";
-import SearchBar from "../components/SearchBar";
-import logo from "../icons/Logo.png";
-import "../App.css"; 
 
 function ResultsPage() {
   const fgRef = useRef();
 
   useEffect(() => {
     if (fgRef.current) {
-      fgRef.current.zoom(1, 400); // Set initial zoom level and duration
+      fgRef.current.zoom(1, 400);
     }
   }, []);
 
   return (
     <Box className="app-container">
+      <Box className="header-banner">
+        <Box className="header-container">
+          <Box
+            component="img"
+            src={logo}
+            alt="Logo"
+            sx={{
+              width: "60px",
+              height: "auto",
+              marginRight: "30px",
+              marginLeft: "10px",
+            }}
+          />
+          <Box className="header-content" pt="15px">
+            <Box className="misinformation" mr="230px">
+              Trust-o-meter
+            </Box>
+            <SearchBar
+              inputValue=""
+              onInputChange={() => {}}
+              onSubmit={() => {}}
+              sx={{ width: "100%", maxWidth: "101px" }}
+            />
+          </Box>
+        </Box>
+      </Box>
       <div className="results-graph-container">
         <ForceGraph2D
           ref={fgRef}
@@ -98,14 +119,12 @@ function ResultsPage() {
           linkCanvasObject={(link, ctx) => {
             const node = radarGraphData.nodes.find((n) => n.id === link.target);
             if (link.source === radarGraphData.nodes.length - 1) {
-              // Draw line from center to node
               ctx.beginPath();
               ctx.moveTo(link.source.fx, link.source.fy);
               ctx.lineTo(node.fx, node.fy);
               ctx.strokeStyle = "rgba(0, 0, 0, 0.5)";
               ctx.stroke();
-              // Draw label at the end of the line
-              const fontSize = 16; // Increased font size
+              const fontSize = 16;
               ctx.font = `${fontSize}px Sans-Serif`;
               ctx.textAlign = "center";
               ctx.textBaseline = "middle";
@@ -114,39 +133,15 @@ function ResultsPage() {
             }
           }}
           width={1000}
-          height={800}
+          height={500}
           nodeVal={(node) => node.value}
           linkDirectionalParticles={0}
           linkCurvature={0}
-          d3VelocityDecay={0} // Prevents the simulation from moving nodes
+          d3VelocityDecay={0}
         />
       </div>
-    <Box className="header-banner">
-      <Box className="header-container">
-        <Box
-          component="img"
-          src={logo}
-          alt="Logo"
-          sx={{
-            width: '60px',
-            height: 'auto',
-            marginRight: '30px', 
-            marginLeft: '10px'
-          }}
-        />
-        <Box className="header-content" pt="15px">
-          <Box className="misinformation" mr="230px">Trust-o-meter</Box>
-          <SearchBar
-            inputValue={inputValue}
-            onInputChange={onInputChange}
-            onSubmit={onSubmit}
-            sx={{ width: '100%', maxWidth: '400px' }} // Adjust width as needed
-          />
-        </Box>
-      </Box>
     </Box>
   );
 }
 
 export default ResultsPage;
-
