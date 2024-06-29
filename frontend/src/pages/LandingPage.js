@@ -2,7 +2,8 @@ import React from "react";
 import Box from "@mui/material/Box";
 import FalseStatements from "../components/FalseStatements";
 import SearchBar from "../components/SearchBar";
-import "../App.css"; // Import custom styles
+import "../App.css"; 
+import logo from "../icons/Logo.png"
 
 function LandingPage({ inputValue, onInputChange, onSubmit }) {
   return (
@@ -14,6 +15,19 @@ function LandingPage({ inputValue, onInputChange, onSubmit }) {
         onInputChange={onInputChange}
         onSubmit={onSubmit}
       />
+      <Box
+        component="img"
+        src={logo}
+        alt="Logo"
+        sx={{
+          width: '100px',
+          height: 'auto',
+          margin: '0 auto',
+          display: 'block',
+        }}
+        pt={4}
+      />
+      <Box className="misinformation">Trust-o-meter</Box>
     </Box>
   );
 }
