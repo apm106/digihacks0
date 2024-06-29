@@ -17,20 +17,73 @@ body {
   }
   
   .header {
-    text-align: center;
+    text-align: left; /* Align text to the left */
     margin-bottom: 20px;
+    position: relative; /* Position relative for cursor animation */
   }
   
   .header h1 {
     font-size: 2rem;
     margin: 0;
-    text-decoration: line-through;
+    overflow: hidden; /* Hide overflow to clip cursor animation */
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: fit-content; /* Size container to content */
   }
   
-  .header p {
-    font-size: 1.2rem;
-    margin: 0;
+  .typing-effect {
+    position: relative; /* Position relative for cursor animation */
+    display: inline-block; /* Display as inline-block for overflow to work */
   }
+  
+  .cursor {
+    display: inline-block;
+    vertical-align: middle;
+    width: 2px;
+    height: 1.2em;
+    background-color: #ffffff; /* White color */
+    animation: blink-caret 0.75s step-end infinite; /* Blinking animation */
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      background-color: transparent; /* Hide cursor */
+    }
+    50% {
+      background-color: #ffffff; /* Show cursor */
+    }
+  }
+  
+  .cross-out {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+  }
+  
+  .cross-out::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 100%;
+    border-bottom: 5px solid #ff0000; /* Red color */
+    animation: cross-out 1s forwards; /* Cross-out animation */
+  }
+  
+  @keyframes cross-out {
+    from {
+      width: 0; /* Start with no line */
+    }
+    to {
+      width: 100%; /* Full width line */
+    }
+  }
+  
+  
   
   .input-container {
     display: flex;
