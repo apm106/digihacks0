@@ -15,7 +15,7 @@ function App() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/article-review', { articleText: inputValue }, {
+      const response = await axios.post('http://localhost:3001/article-review', { articleUrl: inputValue }, {
         headers: {
           'Content-Type': 'application/json'
         }

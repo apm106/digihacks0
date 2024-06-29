@@ -4,6 +4,8 @@ const express = require('express');
 const cors = require('cors'); 
 const { OpenAI } = require('openai');
 const bodyParser = require('body-parser');
+const axios = require('axios');
+const cheerio = require('cheerio');
 
 const app = express();
 const port = 3001;
@@ -14,6 +16,66 @@ const openai = new OpenAI({
 
 app.use(cors()); 
 app.use(bodyParser.json());
+
+async function fetchArticleText(url) {
+  try {
+    const response = await axios.get(url);
+    const html = response.data;
+
+    // Load the HTML into cheerio
+    const $ = cheerio.load(html);
+
+    // Function to recursively extract text from specific tags
+    function extractTextFromTags(node) {
+      let text = '';
+
+      // Traverse through each child node
+      node.contents().each((index, child) => {
+        // If it's a text node, extract its text
+        if (child.type === 'text') {
+          text += $(child).text().trim() + ' ';
+        } else if (child.type === 'tag') {
+          // If it's a specific tag, handle accordingly
+          const tagName = child.name.toLowerCase();
+          switch (tagName) {
+            case 'p':
+            case 'h1':
+            case 'h2':
+            case 'h3':
+            case 'h4':
+            case 'h5':
+            case 'h6':
+            case 'a':
+            case 'ul':
+            case 'ol':
+            case 'li':
+            case 'div':
+            case 'span':
+            case 'section':
+            case 'header':
+            case 'footer':
+              text += extractTextFromTags($(child));
+              break;
+            // Add more cases as needed for other tags
+            default:
+              // Ignore other tags
+              break;
+          }
+        }
+      });
+
+      return text;
+    }
+
+    // Extract text from specific tags within the body
+    const articleText = extractTextFromTags($('body'));
+
+    return articleText.trim(); // Trim whitespace from start and end
+  } catch (error) {
+    console.error('Error fetching article:', error);
+    throw new Error('An error occurred while fetching the article.');
+  }
+}
 
 const getArticleReview = async (articleText) => {
   try {
@@ -38,7 +100,8 @@ const getArticleReview = async (articleText) => {
 app.post('/article-review', async (req, res) => {
   try {
     console.log(req.body)
-    const { articleText } = req.body;
+    const { articleUrl } = req.body;
+    const articleText = await fetchArticleText(articleUrl);
     const response = await getArticleReview(articleText);
     res.json({ response });
   } catch (error) {
@@ -62,3 +125,10 @@ app.listen(port, () => {
 // }
 
 // testGetArticleReview();
+
+// const articleUrl = "https://www.healthline.com/health/staying-healthy";
+// fetchArticleText(articleUrl)
+//   .then(articleText => {
+//     console.log('Fetched article text:', articleText);
+//   })
+//   .catch(error => console.error('Error:', error));
