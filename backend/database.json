@@ -1,11 +1,25 @@
 [
-    {
-      "author": "John Doe",
-      "url": "https://sweetandsavory.co/uses-onions-common-illnesses/",
-      "summary": "Onions have numerous medicinal properties due to their high sulfur content, which provides antiseptic and antibiotic benefits. They can boost immunity, treat respiratory issues, aid in heart health, and have been used for various ailments such as coughs, hair loss, and infections.",
-      "organization": "Example News",
-      "date": "2024-06-29",
-      "reliabilityScore": 8.5
+  {
+    "author": "John Doe",
+    "url": "https://sweetandsavory.co/uses-onions-common-illnesses/",
+    "summary": "Onions have numerous medicinal properties due to their high sulfur content, which provides antiseptic and antibiotic benefits. They can boost immunity, treat respiratory issues, aid in heart health, and have been used for various ailments such as coughs, hair loss, and infections.",
+    "organization": "Example News",
+    "date": "2024-06-29",
+    "scores": {
+      "reliabilityScore": 8.5,
+      "contentAccuracy": {
+        "score": 1,
+        "explanation": "Test contentAccuracy explanation."
+      },
+      "authorCredibility": {
+        "score": 1,
+        "explanation": "Test authorCredibility explanation."
+      },
+      "bias": {
+        "score": 1,
+        "explanation": "Test bias explanation."
+      },
+      "year": 2023
     }
+  }
 ]
-  

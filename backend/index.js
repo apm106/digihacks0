@@ -13,7 +13,6 @@ const port = 3001;
 
 const fileString = fs.readFileSync("database.json", "utf-8");
 const data = JSON.parse(fileString);
-console.log(data);
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -22,6 +21,7 @@ const openai = new OpenAI({
 app.use(cors()); 
 app.use(bodyParser.json());
 
+// Scrapping function
 async function fetchArticleText(url) {
   try {
     const response = await axios.get(url);
@@ -82,9 +82,21 @@ async function fetchArticleText(url) {
   }
 }
 
+// Generate article review
 const getArticleReview = async (articleText) => {
   try {
-    const prompt = "You are an article reviewer that determines whether the following health-related article is a valid source. You need to do the following (1) Assess the quality of the author, e.g. are they a medical professional in the relevant article field. (2) Assess the quality of the organisation e.g. is it a reputable medical organisation that is publishing the article. (3) Assess the currency/recency of the article. (4) Assess whether there is any financial bias in the article e.g. they are sponsored or looking to sell their own product. (5) Assess how well supported the article is e.g. are there references and is it appropriately cited. (6) Assess the scientific validity of the article. (7) Give a final grading of the article on a scale from A - F.";
+    const prompt = "You are an article reviewer that determines whether the following health-related article is a valid source. This has to be a very strict marking system.\n" +
+                    "Here are your 4 tasks:\n" + 
+                    "(1) Rate the content accuracy out of 10 with 2 sentences explaining why. This judges the content of the article based on scientific concensus and methods. For example, 10/10 means that it is the most scientific article.\n" + 
+                    "(2) Rate the author credibility quality out of 10 with 2 sentences explaining why. This judges if the author has qualifications in the field that the article is in. For example, 10/10 means that the author is highly qualified in that specific field and have completed numerous research papers about the topic.\n" + 
+                    "(3) Rate the bias of the article out of 10 with 2 sentences explaining why. This judges if the organisation and author could be bias, including if they were sponsored by an external company to promote a product. For example, 10/10 means that means that the author/organisation is not biased at all.\n" + 
+                    "(4) Find the year that is was published.\n" +
+                    "Now, you must form in a very specific. Here is an example, which x is the rating you will give the resective category, y is the 2 sentence explanation and z is the year that it was published:\n" +
+                    "Content Accuracy: x. y.\n" +
+                    "Author Credibility: x. y.\n" +
+                    "Bias: x. y.\n" +
+                    "Year: z.\n" +
+                    "Here is the content of the article:";
     const openaiModel = "gpt-3.5-turbo-0125";
 
     const completion = await openai.chat.completions.create({
@@ -102,31 +114,147 @@ const getArticleReview = async (articleText) => {
   }
 };
 
-app.post('/article-review', async (req, res) => {
+// Function to extract the score and explanation
+function extractInfo(pattern, text) {
+  if (pattern == "Year") {
+    const regex = new RegExp(`${pattern}: (\\d{4})`);
+    const match = regex.exec(text);
+    if (match) {
+        return parseInt(match[1], 10);
+    }
+  } else {
+    const regex = new RegExp(`${pattern}: (\\d+). (.*?)\\n`, 's');
+    const match = regex.exec(text);
+    if (match) {
+        return {
+            score: parseInt(match[1], 10),
+            explanation: match[2].trim()
+        };
+    }
+  }
+  return null;
+}
+
+// Preprocessing for the data
+function processData(response, articleUrl) {
+
+  // Valid URL
+  url = null
+  if (isURL(articleUrl)) {
+    url = articleUrl
+  }
+
+  // Extract information
+  const contentAccuracy = extractInfo("Content Accuracy", response);
+  const authorCredibility = extractInfo("Author Credibility", response);
+  const bias = extractInfo("Bias", response);
+  const year = extractInfo("Year", response);
+
+  // Calculate geometric mean
+  const geometricMean = (contentAccuracy.score * authorCredibility.score * bias.score) ** (1/3)
+
+  // Calculate reliability of time formula (using the law of 9s)
+  const yearDiff = new Date().getFullYear() - year;
+  const timeReliability = Math.sqrt(0.5 + 0.5 * Math.exp(-yearDiff / 9))
+
+  // Calculate reliabilityScore score
+  const reliabilityScore = geometricMean * timeReliability
+
+  // Combine results
+  const combinedResult = {
+    "author": null,
+    "url": url,
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": reliabilityScore,
+      contentAccuracy,
+      authorCredibility,
+      bias,
+      year
+    }
+  };
+
+  return combinedResult;
+}
+
+function isURL(str) {
+  // Regular expression to match a URL pattern
+  const urlRegex = /^(?:https?|ftp):\/\/(?:www\.)?[^\s/$.?#].[^\s]*$/i;
+
   try {
-    console.log(req.body)
+      // Use the URL object to parse and validate the string as a URL
+      new URL(str);
+      // If no error is thrown and it matches the regex, return true
+      return urlRegex.test(str);
+  } catch (error) {
+      // If the URL parsing throws an error, return false
+      return false;
+  }
+}
+
+// Review the article
+app.post('/article-review', async (req, res) => {
+
+  try {
+    let articleText = "";
+    let result = null;
     const { articleUrl } = req.body;
-    const articleText = await fetchArticleText(articleUrl);
-    const response = await getArticleReview(articleText);
-    res.json({ response });
+
+    // Check cache
+    let foundInCache = false;
+    for (const entry of data) {
+      if (entry.url === articleUrl) {
+        console.log("Found in cache:");
+        res.json(entry);
+        foundInCache = true;
+        break;
+      }
+    }
+
+    // If not found in cache
+    if (!foundInCache) {
+      // If URL, then scrape
+      if (isURL(articleUrl)) {
+        console.log("Scrapping:")
+        articleText = await fetchArticleText(articleUrl);
+      } else {
+        console.log("Not scrapping:")
+        articleText = articleUrl;
+      }
+
+      // Get review
+      const response = await getArticleReview(articleText);
+
+      // Process the data
+      result = processData(response, articleUrl);
+
+      // Add to database
+      data.push(result);
+      fs.writeFileSync("database.json", JSON.stringify(data, null, 2));
+
+      res.json({ result });
+    }
+    
   } catch (error) {
     console.error('CHATGPT Error:', error);
     res.status(500).json({ error: 'An error occurred while processing your request.' });
   }
 });
 
-app.post('/checkarticle', (req, res) => {
-  const url = req.body.url.toString();
+// app.post('/checkarticle', (req, res) => {
+//   const url = req.body.url.toString();
 
-  let output = "nothing";
-  for (const entry of data) {
-    if (entry.url === url) {
-      output = entry;
-    }
-  }
+//   let output = "nothing";
+//   for (const entry of data) {
+//     if (entry.url === url) {
+//       output = entry;
+//     }
+//   }
 
-  res.json(output);
-});
+//   res.json(output);
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
