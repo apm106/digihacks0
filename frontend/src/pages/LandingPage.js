@@ -5,16 +5,19 @@ import FalseStatements from "../components/FalseStatements";
 import SearchBar from "../components/SearchBar";
 import "../App.css"; // Import custom styles
 
-function LandingPage() {
+function LandingPage({ onShowResults }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  const handleSubmit = async () => {
-    try {
-      const response = await axios.post(
+  const handleSubmit = () => {
+    onShowResults(); // Immediately switch to the results page
+
+    // Send the server request in the background
+    axios
+      .post(
         "http://localhost:3001/article-review",
         { articleUrl: inputValue },
         {
@@ -22,18 +25,20 @@ function LandingPage() {
             "Content-Type": "application/json",
           },
         }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error("Error sending the article review:", error.message);
-      if (error.response) {
-        console.error(
-          "Server responded with status code",
-          error.response.status
-        );
-        console.error("Response data:", error.response.data);
-      }
-    }
+      )
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error sending the article review:", error.message);
+        if (error.response) {
+          console.error(
+            "Server responded with status code",
+            error.response.status
+          );
+          console.error("Response data:", error.response.data);
+        }
+      });
   };
 
   return (
