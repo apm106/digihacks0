@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const fs = require('fs');
 const cors = require('cors'); 
 const { OpenAI } = require('openai');
 const bodyParser = require('body-parser');
@@ -9,6 +10,10 @@ const cheerio = require('cheerio');
 
 const app = express();
 const port = 3001;
+
+const fileString = fs.readFileSync("database.json", "utf-8");
+const data = JSON.parse(fileString);
+console.log(data);
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -108,6 +113,19 @@ app.post('/article-review', async (req, res) => {
     console.error('CHATGPT Error:', error);
     res.status(500).json({ error: 'An error occurred while processing your request.' });
   }
+});
+
+app.post('/checkarticle', (req, res) => {
+  const url = req.body.url.toString();
+
+  let output = "nothing";
+  for (const entry of data) {
+    if (entry.url === url) {
+      output = entry;
+    }
+  }
+
+  res.json(output);
 });
 
 app.listen(port, () => {
