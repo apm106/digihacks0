@@ -6,7 +6,13 @@ import SubmitButton from "./SubmitButton";
 
 export default function Input({ value, onChange, onSubmit }) {
   const handleButtonClick = () => {
-    onSubmit(); // Call onSubmit function passed as prop
+    onSubmit();
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      onSubmit();
+    }
   };
 
   return (
@@ -16,25 +22,25 @@ export default function Input({ value, onChange, onSubmit }) {
         alignItems: "center",
         width: "100%",
         maxWidth: 600,
-        justifyContent: "flex-end", // Aligns items to the end (right side)
+        justifyContent: "flex-end",
       }}
     >
       <TextField
         fullWidth
-        label="Paste your link or text"
+        placeholder="Paste your link or text"
         variant="outlined"
         value={value}
         onChange={onChange}
-        InputLabelProps={{
-          sx: { color: "#ffffff" },
-        }}
+        onKeyPress={handleKeyPress}
         InputProps={{
           sx: {
-            color: "#ffffff",
+            color: "black",
             "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#ffffff",
+              borderColor: "black",
+              borderRadius: "20px",
+              borderWidth: "2px",
             },
-            paddingRight: "10px", // Add right padding to ensure text does not overlap button
+            paddingRight: "10px",
           },
           endAdornment: (
             <InputAdornment position="end">

@@ -3,8 +3,8 @@ body {
     font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #002233; /* Dark blue background */
-    color: #ffffff; /* White text */
+    background-color: #DBE6F8; /* Dark blue background */
+    color: black; /* White text */
   }
   
   .app-container {
@@ -39,7 +39,7 @@ body {
     vertical-align: middle;
     width: 2px;
     height: 1.2em;
-    background-color: #ffffff; /* White color */
+    background-color: black; /* White color */
     animation: blink-caret 0.75s step-end infinite; /* Blinking animation */
   }
   
@@ -49,7 +49,7 @@ body {
       background-color: transparent; /* Hide cursor */
     }
     50% {
-      background-color: #ffffff; /* Show cursor */
+      background-color: black; /* Show cursor */
     }
   }
   
@@ -83,7 +83,7 @@ body {
   }
 
 
-    .blinker {
+  .blinker {
     opacity: 1; 
   }
   
@@ -94,6 +94,7 @@ body {
   .misinformation {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    font-weight: bold;
   }
 
   .typewriter-text {
@@ -113,7 +114,7 @@ body {
       border-color: transparent; /* Blinker color */
     }
     50% {
-      border-color: #ffffff; /* White blinker color */
+      border-color: black; /* White blinker color */
     }
   }
   
@@ -125,6 +126,7 @@ body {
     width: 100%;
     max-width: 600px;
     margin-bottom: 20px;
+    background-color: #f0f4f8;
   }
   
   .response-container {
@@ -137,5 +139,55 @@ body {
   button {
     width: 100%;
     margin-top: 10px;
+  }
+  
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .results-graph-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .results-graph-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  
+  .header-banner {
+    background-color: #f0f4f8;
+    padding: 12px 16px;
+    width: 2000px;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
   
