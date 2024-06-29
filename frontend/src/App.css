@@ -3,8 +3,8 @@ body {
     font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #002233; /* Dark blue background */
-    color: #ffffff; /* White text */
+    background-color: #DBE6F8; /* Dark blue background */
+    color: black; /* White text */
   }
   
   .app-container {
@@ -39,7 +39,7 @@ body {
     vertical-align: middle;
     width: 2px;
     height: 1.2em;
-    background-color: #ffffff; /* White color */
+    background-color: black; /* White color */
     animation: blink-caret 0.75s step-end infinite; /* Blinking animation */
   }
   
@@ -49,7 +49,7 @@ body {
       background-color: transparent; /* Hide cursor */
     }
     50% {
-      background-color: #ffffff; /* Show cursor */
+      background-color: black; /* Show cursor */
     }
   }
   
@@ -113,7 +113,7 @@ body {
       border-color: transparent; /* Blinker color */
     }
     50% {
-      border-color: #ffffff; /* White blinker color */
+      border-color: black; /* White blinker color */
     }
   }
   

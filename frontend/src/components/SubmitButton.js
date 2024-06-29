@@ -1,5 +1,5 @@
 import React from "react";
-import microscopeImage from "../microscope.png";
+import microscopeImage from "./icons/microscope.png";
 import "./SubmitButton.css";
 
 export default function SubmitButton({ onClick }) {
