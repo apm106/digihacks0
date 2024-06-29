@@ -9,6 +9,12 @@ export default function Input({ value, onChange, onSubmit }) {
     onSubmit(); // Call onSubmit function passed as prop
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      onSubmit(); // Call onSubmit function passed as prop when Enter key is pressed
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -21,18 +27,18 @@ export default function Input({ value, onChange, onSubmit }) {
     >
       <TextField
         fullWidth
-        label="Paste your link or text"
+        placeholder="Paste your link or text" // Use placeholder instead of label
         variant="outlined"
         value={value}
         onChange={onChange}
-        InputLabelProps={{
-          sx: { color: "#ffffff" },
-        }}
+        onKeyPress={handleKeyPress} // Add onKeyPress event handler
         InputProps={{
           sx: {
-            color: "#ffffff",
+            color: "black",
             "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#ffffff",
+              borderColor: "black",
+              borderRadius: "20px",
+              borderWidth: "2px",
             },
             paddingRight: "10px", // Add right padding to ensure text does not overlap button
           },
