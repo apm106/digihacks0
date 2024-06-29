@@ -21,5 +21,120 @@
       },
       "year": 2023
     }
+  },
+  {
+    "author": null,
+    "url": "https://www.medicalnewstoday.com/articles/in-conversation-what-makes-a-diet-truly-heart-healthy#1",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 6.542132620377179,
+      "contentAccuracy": {
+        "score": 7,
+        "explanation": "The article provides some interesting perspectives on heart-healthy diets and associated topics, but lacks in-depth scientific evidence to support all claims."
+      },
+      "authorCredibility": {
+        "score": 8,
+        "explanation": "Maria Cohut, Ph.D. is a qualified author with a background in the relevant field of health and nutrition, lending credibility to the content of the article."
+      },
+      "bias": {
+        "score": 5,
+        "explanation": "While the article appears to provide balanced information, the lack of information on potential conflicts of interest or funding sources could introduce bias."
+      },
+      "year": 2024
+    }
+  },
+  {
+    "author": null,
+    "url": "https://www.medicalnewstoday.com/articles/why-do-people-move-slower-as-they-get-older-study",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 7.958114415792783,
+      "contentAccuracy": {
+        "score": 8,
+        "explanation": "The article references multiple studies and research findings to support its claims, demonstrating a strong scientific basis. However, some information could be more clearly cited and explained to further enhance accuracy."
+      },
+      "authorCredibility": {
+        "score": 7,
+        "explanation": "The author, Corrie Pelc, does not have any specific qualifications mentioned in the article that would demonstrate expertise in the field of aging or related topics. However, the fact-checking by Jill Seladi-Schulman, Ph.D., adds credibility to the article."
+      },
+      "bias": {
+        "score": 9,
+        "explanation": "The article does not appear to have any notable biases, as it presents information in a balanced and informative manner. There is no indication of sponsorship or influence from external sources."
+      },
+      "year": 2024
+    }
+  },
+  {
+    "author": null,
+    "url": "https://www.healthline.com/health-news/stresslaxing-why-trying-to-relax-can-stress-you-out",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 5.768998281229633,
+      "contentAccuracy": {
+        "score": 4,
+        "explanation": "The article lacks scientific depth and references to support its claims, undermining its accuracy in discussing the impact of stress on relaxation."
+      },
+      "authorCredibility": {
+        "score": 6,
+        "explanation": "While the author, Cathy Cassata, is named, there is no mention of her qualifications in the health and wellness field, impacting the credibility of the article."
+      },
+      "bias": {
+        "score": 8,
+        "explanation": "There is no clear indication of bias in the article, and the fact-checking by Jennifer Chesak adds credibility to the information presented."
+      },
+      "year": 2024
+    }
+  },
+  {
+    "author": null,
+    "url": "https://www.healthline.com/health-news/older-adults-daily-aspirin-risk",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 5.943921952763129,
+      "contentAccuracy": {
+        "score": 5,
+        "explanation": "The article mentions the importance of older adults taking daily aspirin to reduce cardiovascular disease risk, but does not provide clear scientific evidence or sources to support this claim. The article could benefit from more in-depth research and references to support its claims."
+      },
+      "authorCredibility": {
+        "score": 7,
+        "explanation": "The author, Gigen Mammoser, does not have a listed academic or medical background in the field of health, which raises questions about their expertise in the subject matter. However, the fact checker, Jennifer Chesak, MSJ, appears to have a relevant background in medical journalism, boosting the credibility of the fact-checking process."
+      },
+      "bias": {
+        "score": 6,
+        "explanation": "The article does not explicitly mention any biases, but it may lean towards promoting the idea of older adults taking daily aspirin without providing a balanced view of the potential risks and benefits. It's important for the article to present both sides of the argument to avoid any bias towards a specific outcome."
+      },
+      "year": 2024
+    }
+  },
+  {
+    "author": null,
+    "url": "https://www.healthline.com/health-news/wegovy-more-weight-loss-women",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 4.93242414866094,
+      "contentAccuracy": {
+        "score": 5,
+        "explanation": "The article lacks in-depth scientific analysis and references to support the claim that Wegovy may cause greater weight loss in women than men."
+      },
+      "authorCredibility": {
+        "score": 4,
+        "explanation": "While Nancy Schimelpfening has a Master's in Science, the article does not provide information on her specific qualifications or expertise in the field of weight loss medication."
+      },
+      "bias": {
+        "score": 6,
+        "explanation": "The article does not seem to display any explicit bias, but the information provided should be taken with caution due to the lack of scientific evidence and references to support the claims made."
+      },
+      "year": 2024
+    }
   }
 ]

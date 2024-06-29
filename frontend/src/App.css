@@ -118,7 +118,6 @@ body {
     }
   }
   
-  
   .input-container {
     display: flex;
     flex-direction: column;
@@ -126,7 +125,6 @@ body {
     width: 100%;
     max-width: 600px;
     margin-bottom: 20px;
-    background-color: #f0f4f8;
   }
   
   .response-container {
