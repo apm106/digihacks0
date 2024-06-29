@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
 import SubmitButton from "./SubmitButton";
 
 export default function Input({ value, onChange, onSubmit }) {
@@ -33,9 +34,13 @@ export default function Input({ value, onChange, onSubmit }) {
             "& .MuiOutlinedInput-notchedOutline": {
               borderColor: "#ffffff",
             },
-            paddingRight: 0, // Remove default padding to align button correctly
+            paddingRight: "10px", // Add right padding to ensure text does not overlap button
           },
-          endAdornment: <SubmitButton onClick={handleButtonClick} />,
+          endAdornment: (
+            <InputAdornment position="end">
+              <SubmitButton onClick={handleButtonClick} />
+            </InputAdornment>
+          ),
         }}
       />
     </Box>

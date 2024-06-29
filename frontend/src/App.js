@@ -72,7 +72,9 @@ function App() {
             setCurrentPhraseIndex((prevIndex) =>
               prevIndex === phrases.length - 1 ? 0 : prevIndex + 1
             );
-            setDisplayedPhrase("");
+            setDisplayedPhrase(
+              phrases[(currentPhraseIndex + 1) % phrases.length][0]
+            );
           }, 100);
         }, 3000);
       }
