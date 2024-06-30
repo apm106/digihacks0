@@ -3,12 +3,10 @@ import "./App.css";
 import LandingPage from "./pages/LandingPage";
 import ResultsPage from "./pages/ResultsPage";
 import axios from "axios";
-import { useTheme } from "@emotion/react";
 
 function App() {
   const [showResults, setShowResults] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [articleData, setArticleData] = useState(null);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -36,7 +34,6 @@ function App() {
       )
       .then((response) => {
         console.log(response.data);
-        setArticleData(response.data);
       })
       .catch((error) => {
         console.error("Error sending the article review:", error.message);
@@ -55,7 +52,6 @@ function App() {
       inputValue={inputValue}
       onInputChange={handleInputChange}
       onSubmit={handleSubmit}
-      articleData={articleData}
     />
   ) : (
     <LandingPage

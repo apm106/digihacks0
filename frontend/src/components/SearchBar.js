@@ -6,7 +6,7 @@ import "../App.css";
 function SearchBar({ inputValue, onInputChange, onSubmit }) {
   return (
     <Box className="input-container">
-      <Input value={inputValue} onChange={onInputChange} onSubmit={onSubmit} backgroundColor="#e6db90"/>
+      <Input value={inputValue} onChange={onInputChange} onSubmit={onSubmit} />
     </Box>
   );
 }
