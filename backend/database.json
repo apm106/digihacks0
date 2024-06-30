@@ -138,14 +138,13 @@
     }
   },
   {
-<<<<<<< HEAD
     "author": "Centers for Disease Control and Prevention",
     "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/how-they-work.html",
     "summary": "COVID-19 vaccines help the body develop immunity without causing illness, using mRNA or protein subunit technology, and are rigorously tested for safety and effectiveness.",
     "organization": "Centers for Disease Control and Prevention",
     "date": "2023-10-22",
     "scores": {
-      "reliabilityScore": 7.071067811865475,
+      "reliabilityScore": 9.071067811865475,
       "contentAccuracy": {
         "score": 9,
         "explanation": "The Centers for Disease Control and Prevention (CDC) is a highly reputable organization that provides accurate and evidence-based information on various health topics, including COVID-19."
@@ -159,50 +158,6 @@
         "explanation": "The CDC is a government agency that is dedicated to protecting public health, and its information is based on scientific evidence rather than bias or external influence."
       },
       "year": 2023
-=======
-    "author": null,
-    "url": "https://www.medicalnewstoday.com/articles/in-conversation-what-makes-a-diet-truly-heart-healthy#1",
-    "summary": null,
-    "organization": null,
-    "date": null,
-    "scores": {
-      "reliabilityScore": 6.542132620377179,
-      "contentAccuracy": {
-        "score": 7,
-        "explanation": "The article discusses various studies and findings related to heart-healthy diets, but lacks in-depth analysis of the scientific consensus on the topic."
-      },
-      "authorCredibility": {
-        "score": 8,
-        "explanation": "Maria Cohut, Ph.D., the author of the article, has a Ph.D. in a relevant field (presumably health or nutrition) which indicates expertise in the subject matter."
-      },
-      "bias": {
-        "score": 5,
-        "explanation": "The article does not appear to be sponsored or influenced by any external organizations, but the author's personal beliefs or affiliations are not clearly stated, leaving room for potential bias."
-      },
-      "year": 2024
-    }
-  },
-  {
-    "author": null,
-    "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/how-they-work.html",
-    "summary": null,
-    "organization": null,
-    "date": null,
-    "scores": {
-      "reliabilityScore": 7.071067811865475,
-      "contentAccuracy": {
-        "score": 10,
-        "explanation": "The Centers for Disease Control and Prevention is a highly reputable organization that provides accurate and evidence-based information on health-related topics."
-      },
-      "authorCredibility": {
-        "score": 10,
-        "explanation": "The CDC is staffed by highly qualified professionals with expertise in public health and epidemiology, making them credible sources of information."
-      },
-      "bias": {
-        "score": 10,
-        "explanation": "The CDC is a government agency that is dedicated to providing unbiased and evidence-based information to protect public health."
-      },
-      "year": null
     }
   },
   {
@@ -212,44 +167,66 @@
     "organization": null,
     "date": null,
     "scores": {
-      "reliabilityScore": 1.7817974362806788,
+      "reliabilityScore": 9.264262816257396,
       "contentAccuracy": {
-        "score": 2,
-        "explanation": "The article lacks credible sources and scientific evidence to support the claims made about the health benefits of onions in treating common illnesses. The information presented is not based on scientific consensus or methods."
+        "score": 10,
+        "explanation": "The article is published by the Centers for Disease Control and Prevention (CDC), a reputable government agency known for providing accurate and evidence-based information on public health. The content is well-researched, up-to-date, and aligns with scientific consensus."
       },
       "authorCredibility": {
-        "score": 1,
-        "explanation": "The author, Archit Mahajan, does not have any evident qualifications or expertise in the field of health or medicine. There is no information provided about the author's background or credentials to support their expertise in the topic of health benefits of onions."
+        "score": 10,
+        "explanation": "The article is authored by experts in the field of public health and immunology, as indicated by their affiliation with the CDC. The authors are highly qualified and have the necessary expertise and experience to provide trustworthy information on vaccines."
       },
       "bias": {
-        "score": 8,
-        "explanation": "The article does not appear to be sponsored by any external company or organization promoting a specific product. However, the author's lack of expertise in the field of health may lead to biased or inaccurate information being presented to the readers."
+        "score": 10,
+        "explanation": "The CDC is a government agency dedicated to protecting public health, and there is no evidence of bias or conflicts of interest in the article. The information presented is based on scientific evidence and is intended to inform the public about the COVID-19 vaccines objectively."
       },
-      "year": null
+      "year": 2021
     }
   },
   {
     "author": null,
-    "url": "https://sweetandsavory.co/uses-onions-common-illnesses/?fbclid=IwZXh0bgNhZW0CMTEAAR0XclM0z4wv3va_yYWgvoX-4Y8lYDXJQnueTfPg68PrKPUVD8xbCg-iY54_aem_hmcNoX5UbOHBkrrDYid9PA",
+    "url": null,
     "summary": null,
     "organization": null,
     "date": null,
     "scores": {
-      "reliabilityScore": 0,
+      "reliabilityScore": 9.264262816257396,
       "contentAccuracy": {
-        "score": 0,
-        "explanation": "The content of this article is not related to health at all, it focuses on recipes and holidays, which does not contribute to scientific knowledge in the field of health."
+        "score": 10,
+        "explanation": "The article is published by the Centers for Disease Control and Prevention (CDC), which is a reputable source known for providing accurate and reliable information on public health topics. The content is based on scientific research and consensus, making it highly accurate."
       },
       "authorCredibility": {
-        "score": 0,
-        "explanation": "There is no information provided about the author's qualifications or expertise in the field of health, making it impossible to judge their credibility in this area."
+        "score": 10,
+        "explanation": "The information provided in the article is written and reviewed by experts in the field of virology and immunology, ensuring that the content is credible and trustworthy. The authors have extensive experience and qualifications in the subject matter."
       },
       "bias": {
-        "score": 0,
-        "explanation": "The article does not mention any affiliations or sponsorships that could potentially introduce bias."
+        "score": 10,
+        "explanation": "The CDC is a government agency focused on public health, and their goal is to provide objective and evidence-based information to the public. There is no indication of bias or external influence in the article."
       },
-      "year": 2024
->>>>>>> 23eb97e274f9f925a939c9a22f2eef9daa97794b
+      "year": 2021
+    }
+  },
+  {
+    "author": null,
+    "url": null,
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 9.264262816257396,
+      "contentAccuracy": {
+        "score": 10,
+        "explanation": "The information provided in the article is sourced directly from the Centers for Disease Control and Prevention (CDC) and is based on scientific research and consensus, making it a highly reliable and accurate source of information on COVID-19 vaccines."
+      },
+      "authorCredibility": {
+        "score": 10,
+        "explanation": "The article is authored by the CDC, which is a highly respected and reputable organization in the field of public health, with experts and researchers who have extensive experience and qualifications in immunization and vaccine research."
+      },
+      "bias": {
+        "score": 10,
+        "explanation": "The CDC is a government agency that works to protect public health, and their goal is to provide accurate and evidence-based information to the public without bias. There is no indication of sponsorship or influence from external sources in the article."
+      },
+      "year": 2021
     }
   }
 ]

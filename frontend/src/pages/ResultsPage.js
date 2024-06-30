@@ -108,7 +108,7 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
                   articleData.scores.contentAccuracy.explanation
                 )}
                 {renderScoreBar(
-                  "Author Credentials",
+                  "Credibility",
                   articleData.scores.authorCredibility.score,
                   articleData.scores.authorCredibility.explanation
                 )}
