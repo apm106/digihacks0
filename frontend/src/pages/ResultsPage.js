@@ -32,7 +32,7 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
     <Grid container spacing={2} className="breakdown-row" alignItems="center">
       <Grid item xs={2}>
         <Typography variant="body1" className="breakdown-label">
-          {label}
+          {label} {score}/10
         </Typography>
       </Grid>
       <Grid item xs={4}>
@@ -40,16 +40,16 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
           variant="determinate"
           value={score * 10}
           sx={{
-            height: 35, // Increase the height
+            height: 35,
             borderRadius: 5,
-            backgroundColor: "#e0e0e0", // Color for the empty space
+            backgroundColor: "#e0e0e0",
             "& .MuiLinearProgress-bar": {
-              backgroundColor: getColor(score), // Correctly applying color
+              backgroundColor: getColor(score),
             },
           }}
         />
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={5}>
         <Typography variant="body2" className="breakdown-explanation">
           {explanation}
         </Typography>
@@ -59,8 +59,24 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
 
   return (
     <Box sx={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
-      <Paper sx={{ backgroundColor: "#E3F2FD", py: 1, px: 3, position: "sticky", top: 0, zIndex: 1, boxShadow: 3, borderRadius: 1 }}>
-        <Grid container alignItems="center" spacing={2} background-color="#E3F2FD">
+      <Paper
+        sx={{
+          backgroundColor: "#E3F2FD",
+          py: 1,
+          px: 3,
+          position: "sticky",
+          top: 0,
+          zIndex: 1,
+          boxShadow: 3,
+          borderRadius: 1,
+        }}
+      >
+        <Grid
+          container
+          alignItems="center"
+          spacing={2}
+          background-color="#E3F2FD"
+        >
           <Grid item>
             <Box
               component="img"
@@ -70,7 +86,10 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
             />
           </Grid>
           <Grid item>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', ml: 1, color: '#000' }}>
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "bold", ml: 1, color: "#000" }}
+            >
               Trust-o-meter
             </Typography>
           </Grid>

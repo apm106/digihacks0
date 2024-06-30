@@ -68,15 +68,15 @@
   }
   
   .breakdown-label {
-    font-size: 25px !important; /* Change this to your desired font size */
+    font-size: 25px !important;
     font-weight: bold !important;
   }
   
   .score-bar {
-    height: 35px; /* Increased height */
+    height: 35px; 
     border-radius: 5px;
-    background-color: #e0e0e0; /* Color for the empty space */
-    transition: background-color 0.3s ease; /* Smooth transition for color change */
+    background-color: #e0e0e0; 
+    transition: background-color 0.3s ease; 
   }
   
   .breakdown-explanation {
