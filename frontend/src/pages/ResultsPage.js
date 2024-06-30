@@ -58,7 +58,7 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
               placeholder="Paste your link or text to validate here"
               variant="outlined"
               InputProps={{
-                style: { backgroundColor: "white" },
+                style: { backgroundColor: "black" },
               }}
             />
           </Grid>

@@ -1,28 +1,5 @@
 [
   {
-    "author": "John Doe",
-    "url": "https://sweetandsavory.co/uses-onions-common-illnesses/",
-    "summary": "Onions have numerous medicinal properties due to their high sulfur content, which provides antiseptic and antibiotic benefits. They can boost immunity, treat respiratory issues, aid in heart health, and have been used for various ailments such as coughs, hair loss, and infections.",
-    "organization": "Example News",
-    "date": "2024-06-29",
-    "scores": {
-      "reliabilityScore": 8.5,
-      "contentAccuracy": {
-        "score": 1,
-        "explanation": "Test contentAccuracy explanation."
-      },
-      "authorCredibility": {
-        "score": 1,
-        "explanation": "Test authorCredibility explanation."
-      },
-      "bias": {
-        "score": 1,
-        "explanation": "Test bias explanation."
-      },
-      "year": 2023
-    }
-  },
-  {
     "author": null,
     "url": "https://www.medicalnewstoday.com/articles/in-conversation-what-makes-a-diet-truly-heart-healthy#1",
     "summary": null,
@@ -135,6 +112,29 @@
         "explanation": "The article does not seem to display any explicit bias, but the information provided should be taken with caution due to the lack of scientific evidence and references to support the claims made."
       },
       "year": 2024
+    }
+  },
+  {
+    "author": "D.G Sciortino",
+    "url": "https://sweetandsavory.co/uses-onions-common-illnesses/",
+    "summary": "The article highlights the diverse health benefits of onions, including their use in treating coughs, hair loss, chest congestion, and more.",
+    "organization": "Sweet and Savory",
+    "date": "2018-01-21",
+    "scores": {
+      "reliabilityScore": 2.1919853680255343,
+      "contentAccuracy": {
+        "score": 2,
+        "explanation": "The article lacks scientific evidence and sources to support the health claims made about onions, making the information unreliable and inaccurate."
+      },
+      "authorCredibility": {
+        "score": 1,
+        "explanation": "The author, D.G. Sciortino, does not have any mentioned qualifications in the field of health or medicine, making their credibility in writing health-related articles questionable."
+      },
+      "bias": {
+        "score": 8,
+        "explanation": "The article does not appear to be sponsored or biased by any external company or organization, but the lack of credible information and sources raises concerns about the accuracy and reliability of the content."
+      },
+      "year": 2018
     }
   }
 ]
