@@ -21,5 +21,28 @@
       },
       "year": 2023
     }
+  },
+  {
+    "author": null,
+    "url": "https://www.medicalnewstoday.com/articles/in-conversation-what-makes-a-diet-truly-heart-healthy#1",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 6.542132620377179,
+      "contentAccuracy": {
+        "score": 7,
+        "explanation": "The article discusses various studies and findings related to heart-healthy diets, but lacks in-depth analysis of the scientific consensus on the topic."
+      },
+      "authorCredibility": {
+        "score": 8,
+        "explanation": "Maria Cohut, Ph.D., the author of the article, has a Ph.D. in a relevant field (presumably health or nutrition) which indicates expertise in the subject matter."
+      },
+      "bias": {
+        "score": 5,
+        "explanation": "The article does not appear to be sponsored or influenced by any external organizations, but the author's personal beliefs or affiliations are not clearly stated, leaving room for potential bias."
+      },
+      "year": 2024
+    }
   }
 ]
