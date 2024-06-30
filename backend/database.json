@@ -138,6 +138,7 @@
     }
   },
   {
+<<<<<<< HEAD
     "author": "Centers for Disease Control and Prevention",
     "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/how-they-work.html",
     "summary": "COVID-19 vaccines help the body develop immunity without causing illness, using mRNA or protein subunit technology, and are rigorously tested for safety and effectiveness.",
@@ -158,6 +159,97 @@
         "explanation": "The CDC is a government agency that is dedicated to protecting public health, and its information is based on scientific evidence rather than bias or external influence."
       },
       "year": 2023
+=======
+    "author": null,
+    "url": "https://www.medicalnewstoday.com/articles/in-conversation-what-makes-a-diet-truly-heart-healthy#1",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 6.542132620377179,
+      "contentAccuracy": {
+        "score": 7,
+        "explanation": "The article discusses various studies and findings related to heart-healthy diets, but lacks in-depth analysis of the scientific consensus on the topic."
+      },
+      "authorCredibility": {
+        "score": 8,
+        "explanation": "Maria Cohut, Ph.D., the author of the article, has a Ph.D. in a relevant field (presumably health or nutrition) which indicates expertise in the subject matter."
+      },
+      "bias": {
+        "score": 5,
+        "explanation": "The article does not appear to be sponsored or influenced by any external organizations, but the author's personal beliefs or affiliations are not clearly stated, leaving room for potential bias."
+      },
+      "year": 2024
+    }
+  },
+  {
+    "author": null,
+    "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/how-they-work.html",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 7.071067811865475,
+      "contentAccuracy": {
+        "score": 10,
+        "explanation": "The Centers for Disease Control and Prevention is a highly reputable organization that provides accurate and evidence-based information on health-related topics."
+      },
+      "authorCredibility": {
+        "score": 10,
+        "explanation": "The CDC is staffed by highly qualified professionals with expertise in public health and epidemiology, making them credible sources of information."
+      },
+      "bias": {
+        "score": 10,
+        "explanation": "The CDC is a government agency that is dedicated to providing unbiased and evidence-based information to protect public health."
+      },
+      "year": null
+    }
+  },
+  {
+    "author": null,
+    "url": null,
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 1.7817974362806788,
+      "contentAccuracy": {
+        "score": 2,
+        "explanation": "The article lacks credible sources and scientific evidence to support the claims made about the health benefits of onions in treating common illnesses. The information presented is not based on scientific consensus or methods."
+      },
+      "authorCredibility": {
+        "score": 1,
+        "explanation": "The author, Archit Mahajan, does not have any evident qualifications or expertise in the field of health or medicine. There is no information provided about the author's background or credentials to support their expertise in the topic of health benefits of onions."
+      },
+      "bias": {
+        "score": 8,
+        "explanation": "The article does not appear to be sponsored by any external company or organization promoting a specific product. However, the author's lack of expertise in the field of health may lead to biased or inaccurate information being presented to the readers."
+      },
+      "year": null
+    }
+  },
+  {
+    "author": null,
+    "url": "https://sweetandsavory.co/uses-onions-common-illnesses/?fbclid=IwZXh0bgNhZW0CMTEAAR0XclM0z4wv3va_yYWgvoX-4Y8lYDXJQnueTfPg68PrKPUVD8xbCg-iY54_aem_hmcNoX5UbOHBkrrDYid9PA",
+    "summary": null,
+    "organization": null,
+    "date": null,
+    "scores": {
+      "reliabilityScore": 0,
+      "contentAccuracy": {
+        "score": 0,
+        "explanation": "The content of this article is not related to health at all, it focuses on recipes and holidays, which does not contribute to scientific knowledge in the field of health."
+      },
+      "authorCredibility": {
+        "score": 0,
+        "explanation": "There is no information provided about the author's qualifications or expertise in the field of health, making it impossible to judge their credibility in this area."
+      },
+      "bias": {
+        "score": 0,
+        "explanation": "The article does not mention any affiliations or sponsorships that could potentially introduce bias."
+      },
+      "year": 2024
+>>>>>>> 23eb97e274f9f925a939c9a22f2eef9daa97794b
     }
   }
 ]
