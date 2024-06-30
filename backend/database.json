@@ -136,5 +136,28 @@
       },
       "year": 2018
     }
+  },
+  {
+    "author": "Centers for Disease Control and Prevention",
+    "url": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/how-they-work.html",
+    "summary": "COVID-19 vaccines help the body develop immunity without causing illness, using mRNA or protein subunit technology, and are rigorously tested for safety and effectiveness.",
+    "organization": "Centers for Disease Control and Prevention",
+    "date": "2023-10-22",
+    "scores": {
+      "reliabilityScore": 7.071067811865475,
+      "contentAccuracy": {
+        "score": 9,
+        "explanation": "The Centers for Disease Control and Prevention (CDC) is a highly reputable organization that provides accurate and evidence-based information on various health topics, including COVID-19."
+      },
+      "authorCredibility": {
+        "score": 10,
+        "explanation": "The CDC consists of experts in the field of public health who have extensive qualifications and experience in conducting research and disseminating information to the public."
+      },
+      "bias": {
+        "score": 9,
+        "explanation": "The CDC is a government agency that is dedicated to protecting public health, and its information is based on scientific evidence rather than bias or external influence."
+      },
+      "year": 2023
+    }
   }
 ]

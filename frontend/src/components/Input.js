@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SubmitButton from "./SubmitButton";
 
-export default function Input({ value, onChange, onSubmit }) {
+export default function Input({ value, onChange, onSubmit, backgroundColor }) {
   const handleButtonClick = () => {
     onSubmit();
   };
@@ -35,10 +35,14 @@ export default function Input({ value, onChange, onSubmit }) {
         InputProps={{
           sx: {
             color: "black",
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "black",
+            backgroundColor: backgroundColor || "#fff",
+            borderRadius: "20px", // Ensure the border radius is applied to the background
+            "& .MuiOutlinedInput-root": {
               borderRadius: "20px",
-              borderWidth: "2px",
+              "& fieldset": {
+                borderColor: "black",
+                borderWidth: "2px",
+              },
             },
             paddingRight: "10px",
           },

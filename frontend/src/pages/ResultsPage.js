@@ -39,8 +39,8 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
 
   return (
     <Box sx={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
-      <Paper sx={{ backgroundColor: "#d9d9d9", py: 1, px: 3, position: "sticky", top: 0, zIndex: 1, boxShadow: 3, borderRadius: 1 }}>
-        <Grid container alignItems="center" spacing={2}>
+      <Paper sx={{ backgroundColor: "#E3F2FD", py: 1, px: 3, position: "sticky", top: 0, zIndex: 1, boxShadow: 3, borderRadius: 1 }}>
+        <Grid container alignItems="center" spacing={2} background-color="#E3F2FD">
           <Grid item>
             <Box
               component="img"
@@ -50,7 +50,7 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
             />
           </Grid>
           <Grid item>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', ml: 1 }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', ml: 1, color: '#000' }}>
               Trust-o-meter
             </Typography>
           </Grid>
