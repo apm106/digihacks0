@@ -12,7 +12,7 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
     return 'D';
   };
 
-  const renderScoreBar = (label, score) => (
+  const renderScoreBar = (label, score, explanation) => (
     <Grid container alignItems="center" spacing={1}>
       <Grid item xs={3}>
         <Typography variant="body1">{label}</Typography>
@@ -27,6 +27,11 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
       <Grid item xs={2}>
         <Typography variant="body1" align="right">
           {Math.round(score)}/10
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="body2" color="textSecondary">
+          {explanation}
         </Typography>
       </Grid>
     </Grid>
@@ -58,7 +63,7 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
               placeholder="Paste your link or text to validate here"
               variant="outlined"
               InputProps={{
-                style: { backgroundColor: "black" },
+                style: { backgroundColor: "white" },
               }}
             />
           </Grid>
@@ -81,9 +86,9 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
                 </Grid>
                 <Grid item xs={12}>
                   <Box sx={{ mb: 4 }}>
-                    {renderScoreBar("Not Bias", articleData.scores.bias.score)}
-                    {renderScoreBar("Accuracy", articleData.scores.contentAccuracy.score)}
-                    {renderScoreBar("Author Credentials", articleData.scores.authorCredibility.score)}
+                    {renderScoreBar("Bias", articleData.scores.bias.score, articleData.scores.bias.explanation)}
+                    {renderScoreBar("Accuracy", articleData.scores.contentAccuracy.score, articleData.scores.contentAccuracy.explanation)}
+                    {renderScoreBar("Author Credentials", articleData.scores.authorCredibility.score, articleData.scores.authorCredibility.explanation)}
                   </Box>
                 </Grid>
                 <Grid item xs={12}>
@@ -116,7 +121,7 @@ const ResultsPage = ({ inputValue, onInputChange, onSubmit, articleData }) => {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography>
-                    <strong>Year:</strong> {articleData.year || "N/A"}
+                    <strong>Year:</strong> {articleData.scores.year || "N/A"}
                   </Typography>
                 </Grid>
               </Grid>
